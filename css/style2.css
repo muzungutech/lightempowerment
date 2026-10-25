@@ -1,0 +1,845 @@
+
+/*** Spinner Start ***/
+
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .8s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .8s ease-out, visibility 0s linear .0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.wow,
+.animated {
+    animation-duration: 2s !important;
+}
+
+/*** Spinner End ***/
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    z-index: 99;
+}
+
+.back-to-top:hover {
+    background: var(--bs-dark);
+    color: var(--bs-primary);
+}
+
+h1, h2, h3, .h1, .h2, .h3 {
+    font-weight: 700 !important;
+    font-family: 'Open', sans-serif !important;
+}
+
+h4, h5, h6, .h4, .h5, .h6 {
+    font-weight: 600 !important;
+    font-family: 'Open', sans-serif !important;
+}
+
+.py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+
+/*** Button Start ***/
+
+.btn {
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-md-square {
+    width: 46px;
+    height: 46px;
+}
+
+.btn-lg-square {
+    width: 58px;
+    height: 58px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-md-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+.btn.btn-primary:hover {
+    color: var(--bs-primary) !important;
+    background: var(--bs-dark) !important;
+    border-color: var(--bs-dark) !important;
+}
+
+.btn.btn-dark:hover {
+    color: var(--bs-dark) !important;
+    background: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+}
+/*** Button End ***/
+
+/*** Topbar Start ***/
+.topbar .topbar-inner {
+    height: 45px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, .5);
+}
+
+.topbar a,
+.topbar a i {
+    transition: 0.5s;
+}
+
+.topbar a:hover,
+.topbar a i:hover {
+    color: var(--bs-primary) !important;
+}
+
+/*** Topbar Color Override ***/
+.topbar,
+.topbar a,
+.topbar span,
+.topbar i {
+    color: #FFFFFF !important;
+}
+
+/* Optional: keep hover effect slightly different */
+.topbar a:hover,
+.topbar a i:hover {
+    color: #c06a95 !important; /* darker shade for hover */
+}
+
+/*** Topbar End ***/
+
+/* Ultra-compact navbar Start */
+.custom-navbar {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    min-height: unset;
+}
+
+/* Keep logo size but remove extra spacing */
+.navbar-brand {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.navbar-brand img {
+    max-height: 120px; /* keep your logo size */
+    height: auto;
+    display: block;
+}
+
+
+/* Reduce nav link height */
+.navbar .navbar-nav .nav-link {
+    padding: 6px 10px !important; /* reduced from 12px */
+    line-height: 1.2;
+    font-size: 16px;
+}
+
+/* Tighten navbar container */
+.navbar {
+    align-items: center;
+}
+
+/* Reduce toggler size */
+.navbar-toggler {
+    padding: 4px 10px !important;
+    font-size: 14px;
+}
+
+/* Fix collapse spacing on mobile */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        padding: 10px 15px !important; /* keep touch-friendly */
+    }
+.navbar .nav-link:hover {
+    color: #5e2f6e !important;
+}
+
+.navbar .nav-link {
+    color: #7B3F8C !important;
+    font-weight: bold;
+}
+
+}
+
+/* Ultra-compact navbar End */
+
+
+/*** Navbar Start ***/
+/*
+.fixed-top {
+    transition: .5s;
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 12px;
+    color: var(--bs-dark);
+    font-size: 17px;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active,
+.fixed-top.bg-white .navbar .navbar-nav .nav-link:hover,
+.fixed-top.bg-white .navbar .navbar-nav .nav-link.active {
+    color: var(--bs-primary);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse {
+        background: transparent !important;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        top: 100%;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        border: 0;
+        transition: .5s;
+        opacity: 0;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        transform: rotateX(0deg);
+        visibility: visible;
+        background: var(--bs-light) !important;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+.navbar-toggler {
+    background: var(--bs-secondary);
+    color: var(--bs-light) !important;
+    padding: 10px 20px;
+    border: 2px solid var(--bs-primary) !important;
+    box-shadow: none !important;
+} */
+/*** Navbar End ***/
+
+
+/*** Hero Header ***/
+.hero-header {
+    margin-bottom: 6rem;
+    padding-top: 15rem;
+    padding-bottom: 6rem;
+    background: url("../img/hero.jpg"), center center no-repeat;
+    background-size: cover;
+}
+
+.hero-header .hero-header-inner {
+    padding: 3rem;
+    background: rgba(255, 255, 255, .5);
+}
+
+@media (max-width: 992px) {
+    .hero-header {
+        padding-top: 12rem;
+    }
+}
+
+.hero-header .breadcrumb-item {
+    font-size: 18px;
+}
+
+.hero-header-inner, 
+.hero-header-inner h1, 
+.hero-header-inner .breadcrumb-item, 
+.hero-header-inner .breadcrumb-item a {
+    color: #7B3F8C !important;
+}
+/*** Hero Header ***/
+
+
+/*** About Start ***/
+.about a.btn.btn-light:hover {
+    background: var(--bs-dark) !important;
+    color: var(--bs-primary) !important;
+    border: 0;
+}
+.text-primary {
+  color: #7B3F8C !important;
+  font-weight: bold;
+}
+/*** About End ***/
+
+
+/*** Activities Start New***/
+
+/*** Activities Updated Styling ***/
+
+/* Box shadow using #D98CB3 */
+.activities .activities-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 45px rgba(217, 140, 179, 0.3); 
+    transition: 0.5s;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+/* Icons set to Purple #7B3F8C */
+.activities .activities-item i {
+    color: #7B3F8C !important;
+}
+
+/* Buttons set to Pink Background #D98CB3 */
+.activities .btn-custom {
+    background-color: #D98CB3;
+    color: #ffffff;
+    border: none;
+    transition: 0.3s;
+}
+
+/* Button Hover State */
+.activities .btn-custom:hover {
+    background-color: #7B3F8C; /* Switches to purple on hover */
+    color: #ffffff;
+}
+
+/* Card Hover Effect */
+.activities .activities-item:hover {
+    background: #7B3F8C !important;
+}
+
+.activities .activities-item:hover h4,
+.activities .activities-item:hover p,
+.activities .activities-item:hover i {
+    color: #ffffff !important;
+}
+
+/* Button behavior when the card is hovered */
+.activities .activities-item:hover .btn-custom {
+    background-color: #ffffff !important;
+    color: #7B3F8C !important;
+}
+
+/*** Activities End New***/
+
+/*** Activities Start Old ***/
+/*
+.activities .activities-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 45px rgba(12, 18, 20, .08);
+    transition: 0.5s;
+}
+
+.activities .activities-item:hover {
+    background: var(--bs-primary) !important;
+    color: var(--bs-dark) !important;
+}
+
+.activities .activities-item:hover a {
+    background: var(--bs-light) !important;
+    color: var(--bs-dark) !important;
+}
+
+.activities .activities-item:hover a:hover {
+    background: var(--bs-dark) !important;
+    color: var(--bs-primary) !important;
+} */
+
+/*** Activities End Old ***/
+
+/*** Contact Start ***/
+
+.btn-primary {
+    background-color: #7B3F8C;
+}
+
+.btn-primary:hover {
+    background-color: #623270; /* A slightly darker shade for the hover effect */
+}
+/*** Contact End  ***/
+
+
+/*** Sermon Start ***/
+.sermon .sermon-item {
+    height: 100%;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+}
+
+.sermon-item img {
+    transition: 0.5s;
+}
+
+.sermon-item:hover img {
+    transform: scale(1.2)
+}
+
+.sermon-item .sermon-meta a,
+.sermon-item .sermon-meta a i {
+    transition: 0.5s;
+}
+
+.sermon-item .sermon-meta a:hover,
+.sermon-item .sermon-meta a i:hover {
+    color: var(--bs-primary) !important;
+}
+/*** Sermon End ***/
+
+
+/*** Blog Start ***/
+.blog-item {
+    height: 100%;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+}
+
+.blog-item img {
+    transition: 0.5s;
+}
+
+.blog-item:hover img {
+    transform: scale(1.2)
+}
+
+.blog-item .blog-meta a,
+.blog-item .blog-meta a i {
+    transition: 0.5s;
+}
+
+.blog-item .blog-meta a:hover,
+.blog-item .blog-meta a i:hover {
+    color: var(--bs-primary) !important;
+}
+
+.bg-custom-purple {
+    background-color: #7B3F8C !important;
+    /* Optional: Adding a slight shadow to match your pink theme */
+    box-shadow: 2px 2px 10px rgba(217, 140, 179, 0.3);
+    font-weight: 500;
+    z-index: 10; /* Ensures it stays on top of images */
+}
+
+.btn-brand-purple {
+    background-color: #7B3F8C !important;
+    color: #ffffff !important;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-brand-purple:hover {
+    background-color: #5d2f6b !important; /* A slightly darker shade for feedback */
+    color: #ffffff !important;
+    /* Adding your signature pink box shadow on hover */
+    box-shadow: 0 4px 15px #D98CB3; 
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+/*** Blog End ***/
+
+
+/*** Team Start ***/
+.team .team-img {
+    height: 100%;
+    padding: 25px;
+    background: var(--bs-white);
+    overflow: hidden;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+}
+
+.team .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team .team-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.team .team-item img {
+    transition: 0.5s;
+}
+
+.team .team-item:hover img {
+    transform: scale(1.2);
+}
+
+.team .team-item .team-content {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   padding: 15px;
+   transform: translateX(-50%, -50%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   opacity: 0;
+   transition: 0.5s;
+}
+
+.team .team-item:hover .team-content {
+    opacity: 1;
+    background: rgba(241, 193, 82, .7);
+}
+
+/* Custom Social Media Buttons */
+.btn-social-custom {
+    background-color: #7B3F8C !important;
+    color: #ffffff !important;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-social-custom:hover {
+    background-color: #D98CB3 !important; /* Changes to pink on hover */
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(217, 140, 179, 0.5); /* Pink shadow */
+    transform: translateY(-3px);
+}
+
+/* Custom Border Color */
+.border-custom {
+    border-color: #7B3F8C !important;
+}
+
+/* Ensure the FontAwesome icons inside are white */
+.btn-social-custom i {
+    color: #ffffff !important;
+}
+
+/* Custom Social Media Buttons for Team Section */
+.btn-social-custom {
+    background-color: #7B3F8C !important;
+    color: #ffffff !important;
+    border: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-social-custom:hover {
+    background-color: #D98CB3 !important; /* Changes to pink on hover */
+    color: #ffffff !important;
+    /* Your requested pink shadow */
+    box-shadow: 0 0 15px #D98CB3; 
+    transform: scale(1.1); /* Slight zoom for the icon */
+}
+
+/* Ensures FontAwesome icons stay white */
+.btn-social-custom i {
+    color: #ffffff !important;
+}
+/*** Team End ***/
+
+
+/*** testimonial Start New***/
+
+/*** testimonial End New***/
+
+/*** Testimonial Start ***/
+
+/* Custom Purple Background for Quote icons */
+.bg-brand-purple {
+    background-color: #7B3F8C !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Star Rating Icon Color */
+.star-rating-purple i {
+    color: #7B3F8C !important;
+}
+
+.testimonial-item {
+    background: var(--bs-light);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.testimonial-carousel .owl-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.testimonial-carousel {
+    position: relative;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/* Carousel Navigation Arrows */
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background: #7B3F8C !important; /* Purple Background */
+    color: #ffffff !important;
+    font-size: 22px;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    transition: .5s;
+    border-radius: 5px;
+}
+
+/* Navigation Hover state with Pink shadow */
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    background: #D98CB3 !important; /* Changes to Pink on hover */
+    color: #ffffff !important;
+    box-shadow: 0 0 15px #D98CB3;
+}
+
+.testimonial-carousel .owl-nav .owl-next {
+    left: auto;
+    right: 0px;
+}
+/*** Testimonial End ***/
+
+/*** testimonial Start Old***/
+/*
+.testimonial-item {
+    background: var(--bs-light);
+    padding: 40px;
+}
+
+.testimonial-carousel .owl-item img {
+    width: 100px;
+    height: 100px;
+}
+
+.testimonial-carousel {
+    position: relative;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background: var(--bs-primary);
+    color: var(--bs-dark);
+    font-size: 22px;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover {
+    background: var(--bs-dark) !important;
+    color: var(--bs-primary) !important;
+}
+
+.testimonial-carousel .owl-nav .owl-next {
+    left: auto;
+    right: 0px;
+}
+
+.testimonial-carousel .owl-nav .owl-next:hover {
+    background: var(--bs-dark) !important;
+    color: var(--bs-primary) !important;
+}
+*/
+
+/*** testimonial Old End ***/
+
+/*** Partners Styling ***/
+
+.partner-item {
+    background: #ffffff;
+    border-radius: 15px;
+    transition: 0.5s;
+    border: 1px solid rgba(123, 63, 140, 0.1); /* Subtle purple border */
+}
+
+.partner-item:hover {
+    box-shadow: 0 0 25px rgba(217, 140, 179, 0.3); /* Pink shadow on hover */
+    transform: translateY(-5px);
+}
+
+.partner-logo-container img {
+    max-width: 150px;
+    height: auto;
+    filter: grayscale(100%); /* Logos start grey */
+    transition: 0.5s;
+}
+
+.partner-item:hover .partner-logo-container img {
+    filter: grayscale(0%); /* Logos turn to full color on hover */
+}
+
+/* Carousel Navigation Arrows */
+.partner-carousel .owl-nav .owl-prev,
+.partner-carousel .owl-nav .owl-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #7B3F8C !important; /* Brand Purple */
+    color: #ffffff !important;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s;
+}
+
+.partner-carousel .owl-nav .owl-prev { left: -25px; }
+.partner-carousel .owl-nav .owl-next { right: -25px; }
+
+.partner-carousel .owl-nav .owl-prev:hover,
+.partner-carousel .owl-nav .owl-next:hover {
+    background: #D98CB3 !important; /* Pink on hover */
+    box-shadow: 0 0 15px #D98CB3;
+}
+
+
+
+/*** Footer Start ***/
+.footer {
+    margin-top: 6rem;
+    background: var(--bs-dark);
+}
+
+.footer .footer-item p {
+    font-size: 16px;
+    line-height: 35px;
+}
+
+.footer .border-top,
+.footer .border-bottom {
+    border-color: rgba(255, 255, 255, .08) !important;
+}
+
+.footer button {
+    border: 0;
+    transition: 0.5s;
+}
+
+.footer button:hover {
+    background: var(--bs-dark);
+    color: var(--bs-primary);
+}
+
+.footer-item a.btn.btn-light:hover {
+    background: var(--bs-primary);
+    color: var(--bs-dark) !important;
+    border: var(--bs-primary);
+}
+
+.footer-item a,
+.footer-item a i {
+    transition: 0.5s;
+}
+
+.footer-item a:hover,
+.footer-item a i:hover {
+    color: var(--bs-primary) !important;
+}
+
+/* Responsive Logo Styles */
+.footer-logo {
+    display: inline-block;
+}
+
+.responsive-logo {
+    max-width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* Responsive breakpoints for logo sizes */
+@media (max-width: 1200px) {
+    .responsive-logo {
+        max-width: 160px;
+    }
+}
+
+@media (max-width: 992px) {
+    .responsive-logo {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .responsive-logo {
+        max-width: 140px;
+    }
+}
+
+@media (max-width: 576px) {
+    .responsive-logo {
+        max-width: 120px;
+    }
+}
+
+/* Optional: Add hover effect */
+.responsive-logo:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+/*** Footer End ***/
